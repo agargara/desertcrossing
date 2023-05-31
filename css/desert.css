@@ -1,0 +1,94 @@
+body {
+    color: #EDC9AF;
+    background-color: #030529;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a { color:#E25822 }
+.fuel-count { color: #E25822; }
+.distance { color: #4ab90e; }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0 1em;
+    justify-items: start;
+    width: fit-content;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+p.tagline{
+    font-size: 0.75em;
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+}
+
+header{
+    margin-bottom: 1em;
+}
+
+.flip {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    margin-top: 2em;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+.info {
+    margin-bottom: 1em;
+    flex-direction: column;
+}
+
+.controls, .info {
+    display: flex;
+}
+
+.controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #FFDCA5;
+    color: #694C36;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.controls > *:not(:last-child) {
+    margin-right: 1em;
+}
+
+.controls button:hover {
+    background-color: #FFC680;
+}
+
+.controls .btn-container button{
+    margin-right: 0.5em;
+}
+.controls .btn-container input{
+    padding: 0.5em;
+}
+
+
+#the-desert{
+    background-color: #FFE6C7;
+    border-radius: 5px;
+    padding: 1em 1em 0em 1em;
+    margin: 1em 0;
+}

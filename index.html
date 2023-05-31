@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Desert Crossing</title>
+    <link rel="stylesheet" href="css/desert.css">
+  </head>
+  <body>
+    <div class="container">
+        <header>
+            <h1>Desert Crossing</h1>
+            <p class="tagline">Inspired by the <a href="https://en.wikipedia.org/wiki/Desert_crossing_problem" target="_blank">desert crossing mathematics problem</a></p>
+        </header>
+        <div class="info">
+            <div class="grid-container">
+                <div>Fuel</div><div class="fuel-count">1 L</div>
+                <div>Distance</div><div class="distance">0 km</div>
+                <div class="restart-info hidden">Restarts</div><div class="restart-info hidden" id="restart-count">0</div>
+                <div>Status</div><div class="current-status">At home base</div>
+            </div>
+            <div class="deposit-info hidden"></div>
+            <div id="the-desert"><div id="car-icon-container"><img id="car-icon" src='img/jeep.png'></div></div>
+        </div>
+        <div class="controls">
+            <button id="btn-go">Drive</button>
+            <button id="btn-stop" class="hidden">Stop</button>
+            <button id="btn-turn" class="hidden">Turn around</button>
+            <div id="btn-deposit-container" class="btn-container hidden">
+                <button id="btn-deposit">Deposit fuel</button><input type="number" id="fuel-deposit-amount" min="0" step="0.01" value="0.1" /> L
+            </div>
+            <div id="btn-take-container" class="btn-container hidden">
+                <button id="btn-take">Take fuel</button><input type="number" id="fuel-take-amount" min="0" step="0.01" value="0.1" /> L
+            </div>
+            <button id="btn-restart" class="hidden">Restart</button>
+        </div>
+    </div>
+  </body>
+<script src="js/desert.js" type="module"></script>
+</html>
