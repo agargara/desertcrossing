@@ -7,37 +7,40 @@
   </head>
   <body>
     <div class="container">
-        <div class="info">
-            <div class="grid-container">
-                <div>Fuel</div><div class="fuel-count">1 L</div>
-                <div>Distance</div><div class="distance">0 km</div>
-                <div>Status</div><div class="current-status">At home base</div>
+        <div class="main">
+            <div id="announce-container"></div>
+            <div class="info">
+                <div class="grid-container grid-two-cols">
+                    <div>Fuel</div><div class="fuel-text"><span id="current-fuel">1 / 1 L</span></div>
+                    <div>Distance</div><div class="distance-text"><span id="current-distance">0 km</span></div>
+                    <div>Status</div><div class="current-status">Resting at home base</div>
+                </div>
+                <div class="description">A vast desert lies before you.</div>
+                <div id="the-desert">
+                    <div id="car-icon-container"><img id="car-icon" src='img/jeep.png'></div>
+                    <div id="fuel-deposits-container"></div>
+                </div>
             </div>
-            <div class="deposit-info invisible">There are no fuel deposits here.</div>
-            <div id="the-desert">
-                <div id="car-icon-container"><img id="car-icon" src='img/jeep.png'></div>
-                <div id="fuel-deposits-container"></div>
+            <div class="controls controls-main">
+                <button id="btn-go">Drive</button>
+                <button id="btn-stop" class="hidden">Stop</button>
+                <button id="btn-turn" class="hidden">Turn around</button>
+                <div id="btn-deposit-container" class="btn-container hidden">
+                    <button id="btn-deposit">Deposit fuel</button><input type="number" id="fuel-deposit-amount" min="0" step="0.1" value="0.1" /> L
+                </div>
+                <div id="btn-take-container" class="btn-container hidden">
+                    <button id="btn-take">Take fuel</button><input type="number" id="fuel-take-amount" min="0" step="0.1" value="0.1" /> L
+                </div>
             </div>
-        </div>
-        <div class="controls controls-main">
-            <button id="btn-go">Drive</button>
-            <button id="btn-stop" class="hidden">Stop</button>
-            <button id="btn-turn" class="hidden">Turn around</button>
-            <div id="btn-deposit-container" class="btn-container hidden">
-                <button id="btn-deposit">Deposit fuel</button><input type="number" id="fuel-deposit-amount" min="0" step="0.1" value="0.1" /> L
-            </div>
-            <div id="btn-take-container" class="btn-container hidden">
-                <button id="btn-take">Take fuel</button><input type="number" id="fuel-take-amount" min="0" step="0.1" value="0.1" /> L
-            </div>
-        </div>
-        <div class="tab hidden tab-stats">
-            <div class="grid-container">
-                <div class="restart-info hidden">Restarts</div><div class="restart-info hidden dev" id="restart-count">0</div>
+            <div class="tab hidden tab-stats">
+                <div class="grid-container grid-two-cols">
+                    <div class="restart-info hidden">Restarts</div><div class="restart-info hidden dev" id="restart-count">0</div>
+                </div>
             </div>
         </div>
         <div class="footer">
             <div class="controls controls-other">
-                <button id="btn-restart">Restart</button>
+                <button id="btn-restart">Restart from last checkpoint</button>
                 <button id="btn-pause" class="dev">Pause</button>
             </div>
             <footer>
