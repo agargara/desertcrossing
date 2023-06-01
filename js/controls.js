@@ -24,6 +24,9 @@ export class Controls {
     document.getElementById('btn-take').addEventListener('click', ()=>{
       game.take()
     })
+    document.getElementById('btn-pause').addEventListener('click', ()=>{
+      game.pause()
+    })
 
   }
 }

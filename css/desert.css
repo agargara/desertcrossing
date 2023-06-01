@@ -1,14 +1,27 @@
+:root {
+    /*--sand: #EDC9AF;*/
+    --darksand: #836558;
+    --sand: #edc9af;
+    --lightsand: #ffdca5;
+    --lightersand: #ffe6c7;
+    --sandgradient: linear-gradient(to top, var(--darksand) 0%, var(--sand) 25%, var(--lightsand) 50%, var(--lightersand) 100%);
+    --darkersand: #694C36;
+    --darkblue: #030529;
+    --orange: #E25822;
+    --darkred: #580707;
+    --green: #4ab90e;
+}
+
 body {
-    color: #EDC9AF;
-    background-color: #030529;
+    color: var(--sand);
+    background-color: var(--darkblue);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-a { color:#E25822 }
-.fuel-count { color: #E25822; }
-.distance { color: #4ab90e; }
+a, .fuel-count { color: var(--orange); }
+.distance { color: var(--green); }
 
 .grid-container {
     display: grid;
@@ -31,8 +44,8 @@ p.tagline{
     font-style: italic;
 }
 
-header{
-    margin-bottom: 1em;
+footer{
+    margin-top: 1em;
 }
 
 .flip {
@@ -43,11 +56,15 @@ header{
 .hidden {
     display: none;
 }
+.invisible{
+    visibility: hidden;
+}
 
 .container {
-    margin-top: 2em;
-    margin-left: 4em;
-    margin-right: 4em;
+    display: flex;
+    flex-direction: column;
+    margin: 2em 4em;
+    height: calc(100vh - 4em);
 }
 
 .info {
@@ -61,13 +78,21 @@ header{
 
 .controls button {
     padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #FFDCA5;
-    color: #694C36;
+    cursor: pointer;
+    background-color: var(--sand);
+}
+
+.controls button, .controls input {
     border: none;
     border-radius: 0.5em;
-    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--darkblue);
+}
+.controls input{
+    padding: 0.5em;
+    width: 3em;
+    background-color: var(--lightersand);
 }
 
 .controls > *:not(:last-child) {
@@ -75,20 +100,51 @@ header{
 }
 
 .controls button:hover {
-    background-color: #FFC680;
+    background-color: var(--darksand);
 }
 
 .controls .btn-container button{
     margin-right: 0.5em;
 }
-.controls .btn-container input{
-    padding: 0.5em;
-}
 
 
 #the-desert{
-    background-color: #FFE6C7;
+    background: var(--sandgradient);
     border-radius: 5px;
     padding: 1em 1em 0em 1em;
     margin: 1em 0;
+    width: fit-content;
+    overflow: hidden;
+}
+
+#the-desert, #fuel-deposits-container{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* Overlap all children divs in the desert */
+#the-desert div, #fuel-deposits-container div{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    align-self: end;
+    width: fit-content;
+}
+
+#car-icon-container{
+   /* translate: -25% 0; */
+}
+
+#fuel-deposits-container{
+    z-index: 2;
+}
+#fuel-deposits-container div{
+    background: var(--orange);
+    border: 1px solid var(--darkred);
+    border-bottom: none;
+    min-width: 12px;
+    border-radius: 3px 3px 0 0;
+}
+
+.footer{
+    margin-top: auto;
 }
